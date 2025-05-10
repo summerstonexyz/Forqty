@@ -10,7 +10,5 @@ export interface Fork {
   governanceToken: string | null
   website: string
   docs: string
-  twitter?: string
-  logoUrl?: string
   launchDate?: string
 }

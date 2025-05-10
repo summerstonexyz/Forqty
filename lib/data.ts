@@ -12,8 +12,6 @@ export const forksData: Fork[] = [
     governanceToken: "N/A",
     website: "https://usefelix.xyz",
     docs: "https://usefelix.gitbook.io",
-    twitter: "https://x.com/felixprotocol",
-    logoUrl: "/felix-logo.png",
   },
   {
     id: "quill-finance",
@@ -25,8 +23,6 @@ export const forksData: Fork[] = [
     governanceToken: "QUILL",
     website: "https://quill.finance",
     docs: "https://quill-finance.gitbook.io",
-    twitter: "https://x.com/QuillFi",
-    logoUrl: "/quill-logo.png",
   },
 
   // Scheduled forks (launching soon)
@@ -40,8 +36,6 @@ export const forksData: Fork[] = [
     governanceToken: "ASF",
     website: "https://asymmetry.finance",
     docs: "https://docs.asymmetry.finance",
-    twitter: "https://x.com/asymmetryfin",
-    logoUrl: "/asymmetry-logo.png",
     launchDate: "Coming soon",
   },
   {
@@ -54,8 +48,6 @@ export const forksData: Fork[] = [
     governanceToken: "ICL",
     website: "https://ironclad.finance",
     docs: "https://docs.ironclad.finance",
-    twitter: "https://x.com/IroncladFinance",
-    logoUrl: "/ironclad-logo.png",
     launchDate: "Coming soon",
   },
   {
@@ -68,8 +60,6 @@ export const forksData: Fork[] = [
     governanceToken: "EBISU",
     website: "https://ebisu.money",
     docs: "https://ebisu.money/",
-    twitter: "https://x.com/ebisu_finance",
-    logoUrl: "/ebisu-logo.png",
     launchDate: "Coming soon",
   },
   {
@@ -82,8 +72,6 @@ export const forksData: Fork[] = [
     governanceToken: "SXY",
     website: "https://aesyx.fi",
     docs: "https://docs.aesyx.fi",
-    twitter: "https://x.com/Aesyx_Fi",
-    logoUrl: "/aesyx-logo.png",
     launchDate: "Coming soon",
   },
   {
@@ -96,8 +84,6 @@ export const forksData: Fork[] = [
     governanceToken: "NERI",
     website: "https://nerite.org",
     docs: "https://docs.nerite.org/",
-    twitter: "https://x.com/neriteorg",
-    logoUrl: "/nerite-logo.png",
     launchDate: "Launching soon",
   },
   {
@@ -110,8 +96,6 @@ export const forksData: Fork[] = [
     governanceToken: "ORKI",
     website: "https://www.orki.finance/",
     docs: "https://bento.me/orkifi",
-    twitter: "https://x.com/OrkiFi",
-    logoUrl: "/orki-logo.png",
     launchDate: "Launching soon",
   },
 
@@ -126,8 +110,6 @@ export const forksData: Fork[] = [
     governanceToken: "SPICE",
     website: "https://spiceusd.xyz",
     docs: "https://docs.spiceusd.xyz",
-    twitter: "https://x.com/spiceusd",
-    logoUrl: "/spiceusd-logo.png",
   },
   {
     id: "defi-dollar",
@@ -139,8 +121,6 @@ export const forksData: Fork[] = [
     governanceToken: "DEFI",
     website: "https://defidollar.io",
     docs: "https://docs.defidollar.io",
-    twitter: "https://x.com/DeFiDollarIO",
-    logoUrl: "/defi-dollar-logo.png",
   },
   {
     id: "beraborrow",
@@ -152,8 +132,6 @@ export const forksData: Fork[] = [
     governanceToken: "POLLEN",
     website: "https://beraborrow.com",
     docs: "https://beraborrow.gitbook.io",
-    twitter: "https://x.com/beraborrow",
-    logoUrl: "/beraborrow-logo.png",
   },
   {
     id: "virtue",
@@ -165,7 +143,5 @@ export const forksData: Fork[] = [
     governanceToken: "TBD",
     website: "https://virtue.money",
     docs: "https://docs.virtue.money/",
-    twitter: "https://x.com/virtue_money",
-    logoUrl: "/virtue-money-logo.png",
   },
 ]

@@ -1,7 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Calendar, Check, Clock, ExternalLink } from "lucide-react"
-import { XIcon } from "@/components/icons/x-icon"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -45,18 +43,7 @@ export function ForkCard({ fork }: { fork: Fork }) {
             {fork.chain}
           </Badge>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="flex-shrink-0">
-            <Image
-              src={fork.logoUrl || "/placeholder.svg?height=40&width=40&query=Protocol%20Logo"}
-              alt={`${fork.name} logo`}
-              width={24}
-              height={24}
-              className="rounded-full"
-            />
-          </div>
-          <CardTitle className="text-base md:text-lg">{fork.name}</CardTitle>
-        </div>
+        <CardTitle className="text-base md:text-lg">{fork.name}</CardTitle>
         <CardDescription className="text-xs md:text-sm line-clamp-2">{fork.description}</CardDescription>
       </CardHeader>
       <CardContent className="pb-2 flex-grow">
@@ -91,7 +78,7 @@ export function ForkCard({ fork }: { fork: Fork }) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
+                  className="h-7 text-xs px-3 md:h-8 hover:bg-background/80 transition-colors flex-1"
                   asChild
                 >
                   <Link href={fork.website} target="_blank" className="flex items-center justify-center">
@@ -106,36 +93,13 @@ export function ForkCard({ fork }: { fork: Fork }) {
             </Tooltip>
           </TooltipProvider>
 
-          {fork.twitter && (
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
-                    asChild
-                  >
-                    <Link href={fork.twitter} target="_blank" className="flex items-center justify-center">
-                      <XIcon className="h-3.5 w-3.5 md:h-4 md:w-4" />
-                      <span className="sr-only">X (Twitter)</span>
-                    </Link>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-xs">Follow on X (Twitter)</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          )}
-
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
+                  className="h-7 text-xs px-3 md:h-8 hover:bg-background/80 transition-colors flex-1"
                   asChild
                 >
                   <Link href={fork.docs} target="_blank" className="flex items-center justify-center">
