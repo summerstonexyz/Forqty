@@ -1,30 +1,61 @@
-# Liquity V2 Forks
+Forqty is a comprehensive dashboard for tracking all Liquity V2 forks across different blockchains. The platform provides up-to-date information on launched, scheduled, and unscheduled Liquity V2 forks, making it easier for users to discover and compare different implementations.
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+# Features
+- Comprehensive Fork Tracking: Monitor all Liquity V2 forks across multiple blockchains
+- Status Categorization: Filter forks by launched, scheduled, and unscheduled status
+- Detailed Information: Access key details for each fork, including:
+  - Stablecoin name
+  - Governance token
+  - Chain information
+  - Launch dates (for scheduled forks)
+  - Official links (website, documentation, social media)
+  - Search & Filter: Easily find specific forks using the search function or filter by blockchain
+  - Responsive Design: Optimized for both desktop and mobile viewing
+# Technologies
+- Framework: Next.js (App Router)
+- Styling: Tailwind CSS
+- UI Components: shadcn/ui
+- Icons: Lucide React
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/0xpilis-projects/v0-liquity-v2-forks)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/Z8XGg3BGgAu)
+# Getting Started
+Prerequisites:
+- Node.js 18.x or higher
+- npm or yarn
+# Installation
+Clone the repository:
+``` bash
+git clone https://github.com/yourusername/forqty.git
+cd forqty
+```
+Install dependencies:
+  ```bash
+npm install
+# or
+yarn install
+```
+Run the development server:
+``` bash
+npm run dev
+# or
+yarn dev
+```
+Open on Open [http://localhost:3000](http://localhost:3000) in your browser to see the dashboard.
 
-## Overview
-
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
-
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/0xpilis-projects/v0-liquity-v2-forks](https://vercel.com/0xpilis-projects/v0-liquity-v2-forks)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/Z8XGg3BGgAu](https://v0.dev/chat/projects/Z8XGg3BGgAu)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Project structure
+```
+forqty/
+├── app/                  # Next.js app directory
+│   ├── layout.tsx        # Root layout component
+│   ├── page.tsx          # Main page component
+│   └── globals.css       # Global styles
+├── components/           # React components
+│   ├── dashboard-layout.tsx  # Main layout wrapper
+│   ├── forks-dashboard.tsx   # Dashboard component
+│   ├── fork-card.tsx         # Individual fork card
+│   └── ui/                   # UI components from shadcn
+├── lib/                  # Utility functions and data
+│   ├── data.ts           # Fork data
+│   └── types.ts          # TypeScript types
+└── public/               # Static assets
+└── logos/            # Protocol logos
+```
