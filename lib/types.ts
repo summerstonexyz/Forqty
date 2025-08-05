@@ -10,5 +10,20 @@ export interface Fork {
   governanceToken: string | null
   website: string
   docs: string
+  twitter?: string
+  logoUrl?: string
   launchDate?: string
+  hidden?: boolean
+  // New rewards property
+  rewards?: {
+    title: string
+    url: string
+  }
+  // Existing fields for expanded card
+  collaterals?: string[]
+  longDescription?: string
+  liquidationReserve?: string
+  minimumDebt?: string
+  borrowingFee?: string
+  redemptionFee?: string
 }

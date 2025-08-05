@@ -23,9 +23,12 @@ export function ForksDashboard() {
   const [searchQuery, setSearchQuery] = useState("")
   const [chainFilter, setChainFilter] = useState<string[]>([])
 
-  const chains = [...new Set(forksData.map((fork) => fork.chain))]
+  // Filter out hidden forks
+  const visibleForks = forksData.filter((fork) => !fork.hidden)
 
-  const filteredForks = forksData.filter((fork) => {
+  const chains = [...new Set(visibleForks.map((fork) => fork.chain))]
+
+  const filteredForks = visibleForks.filter((fork) => {
     const matchesSearch =
       fork.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       fork.stablecoin.toLowerCase().includes(searchQuery.toLowerCase())

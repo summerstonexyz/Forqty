@@ -3,11 +3,12 @@
 import type React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ExternalLink, Moon, Sun } from "lucide-react"
+import { ExternalLink, Moon, Sun, Github, Globe } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { XIcon } from "@/components/icons/x-icon"
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { setTheme } = useTheme()
@@ -22,6 +23,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             Dashboard
           </span>
         </div>
+
         <div className="ml-auto flex items-center gap-2 md:gap-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -55,7 +57,42 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               mentioned. The content is provided for informational purposes only and does not constitute financial,
               investment, or legal advice. Users should conduct their own research and exercise independent judgment.
             </p>
-            <p className="text-[10px] text-muted-foreground mt-2 md:text-xs">© {new Date().getFullYear()} Forqty</p>
+
+            <div className="flex items-center justify-center gap-4 mt-4 mb-3">
+              <Link
+                href="https://summerstone.xyz"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                title="Summerstone Website"
+              >
+                <Globe className="h-4 w-4 md:h-5 md:w-5" />
+                <span className="sr-only">Website</span>
+              </Link>
+
+              <Link
+                href="https://github.com/summerstonexyz"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                title="Summerstone GitHub"
+              >
+                <Github className="h-4 w-4 md:h-5 md:w-5" />
+                <span className="sr-only">GitHub</span>
+              </Link>
+
+              <Link
+                href="https://x.com/summerstonexyz"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                title="Summerstone X"
+              >
+                <XIcon className="h-4 w-4 md:h-5 md:w-5" />
+                <span className="sr-only">X (Twitter)</span>
+              </Link>
+            </div>
+
+            <p className="text-[10px] text-muted-foreground mt-2 md:text-xs">
+              © 2025 Summerstone. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
