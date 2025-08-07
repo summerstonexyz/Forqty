@@ -122,9 +122,9 @@ export const forksData: Fork[] = [
       title: "Rewards Program",
       url: "https://x.com/DeFiDollarIO/status/1950944516007219581",
     },
-    collaterals: ["WBTC", "LINK", "UNI", "AAVE", "LDO", "CRV", "FRAX", "SKY", "LQTY", "YFI", "FXS"],
+    collaterals: ["WBTC", "LINK", "UNI", "AAVE", "LDO", "CRV", "FRAX", "SKY", "LQTY", "YFI"],
     longDescription:
-      "DeFi Dollar is a decentralized borrowing protocol on Ethereum that allows users to mint DUSD stablecoins against various ETH LST collaterals.",
+      "DeFi Dollar is a decentralized borrowing protocol on Ethereum that allows users to mint USDFI stablecoins against various collaterals, including LQTY.",
   },
 
   // Scheduled forks (launching soon)
