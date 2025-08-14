@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink } from "lucide-react"
 import { XIcon } from "@/components/icons/x-icon"
 
 import { Badge } from "@/components/ui/badge"
@@ -127,18 +127,22 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
           <Separator className="my-6" />
 
           <div className="flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href={fork.website} target="_blank" className="flex items-center">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Visit Website
-              </Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href={fork.docs} target="_blank" className="flex items-center">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Documentation
-              </Link>
-            </Button>
+            {fork.website && (
+              <Button asChild>
+                <Link href={fork.website} target="_blank" className="flex items-center">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Visit Website
+                </Link>
+              </Button>
+            )}
+            {fork.docs && (
+              <Button variant="outline" asChild>
+                <Link href={fork.docs} target="_blank" className="flex items-center">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Documentation
+                </Link>
+              </Button>
+            )}
             {fork.rewards && (
               <Button
                 variant="outline"

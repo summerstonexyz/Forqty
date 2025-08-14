@@ -14,7 +14,7 @@ export const forksData: Fork[] = [
     docs: "https://usefelix.gitbook.io",
     twitter: "https://x.com/felixprotocol",
     logoUrl: "/felix-logo.png",
-    collaterals: ["HYPE", "UBTC"],
+    collaterals: ["HYPE", "UBTC", "kHYPE", "wstHYPE"],
     longDescription:
       "Felix is a suite of onchain borrowing and lending products running on Hyperliquid L1. Their goal is to let anyone unlock liquidity or earn yield in a secure, risk-adjusted, and friction-free way.",
   },
@@ -86,6 +86,10 @@ export const forksData: Fork[] = [
     docs: "https://docs.aesyx.fi",
     twitter: "https://x.com/Aesyx_Fi",
     logoUrl: "/aesyx-logo.png",
+    rewards: {
+      title: "Rewards Program",
+      url: "https://x.com/LiquityProtocol/status/1954927945992286598",
+    },
     collaterals: ["BTC.b", "AVAX", "LSTs"],
     longDescription:
       "Aesyx is a decentralized borrowing protocol on Avalanche that allows users to mint USXY stablecoins against various collaterals including BTC.b, AVAX, and Liquid Staking Tokens.",
@@ -159,6 +163,22 @@ export const forksData: Fork[] = [
     launchDate: "Coming soon",
     hidden: true,
   },
+  {
+    id: "soneta",
+    name: "Soneta",
+    description: "Liquity V2 fork on Sonic",
+    chain: "Sonic",
+    status: "scheduled",
+    stablecoin: "ONE",
+    governanceToken: "STA",
+    website: "https://www.soneta.xyz/",
+    docs: "https://docs.soneta.xyz/",
+    twitter: "https://x.com/soneta_xyz",
+    logoUrl: "/soneta-logo.png",
+    collaterals: ["S", "sTS", "wOS", "LBTC"],
+    longDescription:
+      "Liquity V2 fork on Sonic blockchain enabling users to mint the ONE stablecoin against various collaterals.",
+  },
 
   // Unscheduled forks
   {
@@ -169,11 +189,10 @@ export const forksData: Fork[] = [
     status: "unscheduled",
     stablecoin: "–",
     governanceToken: "N/A",
-    website: "https://www.saga.xyz",
-    docs: "https://medium.com/sagaxyz/introducing-mustang-decentralized-credit-unbridled-speed-a11cb4a4666d",
+    website: "https://www.must.finance/",
+    docs: null,
     twitter: "https://x.com/mustangfinance",
     logoUrl: "/mustang-logo.jpg",
-    collaterals: ["BTC", "ETH", "SAGA"],
     longDescription:
       "Mustang Finance is a Liquity V2 fork on the Saga blockchain, providing decentralized credit with unbridled speed. Users can mint stablecoins against BTC, ETH, and SAGA collaterals.",
   },
@@ -191,22 +210,6 @@ export const forksData: Fork[] = [
     logoUrl: "/alpen-logo.png",
     longDescription:
       "BTD will deploy Liquity V2 with BTC as the sole collateral on Alpen's Bitcoin ZK rollup with immutable code from the moment of deployment.",
-  },
-  {
-    id: "soneta",
-    name: "Soneta",
-    description: "Liquity V2 fork on Sonic",
-    chain: "Sonic",
-    status: "unscheduled",
-    stablecoin: "ONE",
-    governanceToken: "STA",
-    website: "https://www.soneta.xyz/",
-    docs: "https://docs.soneta.xyz/",
-    twitter: "https://x.com/soneta_xyz",
-    logoUrl: "/soneta-logo.png",
-    collaterals: ["S", "STS", "WOS", "LBTC"],
-    longDescription:
-      "Liquity V2 fork on Sonic blockchain enabling users to mint the ONE stablecoin against various collaterals.",
   },
   {
     id: "beraborrow",
@@ -248,8 +251,8 @@ export const forksData: Fork[] = [
     status: "unscheduled",
     stablecoin: "–",
     governanceToken: "N/A",
-    website: "#",
-    docs: "#",
+    website: null,
+    docs: null,
     logoUrl: "/katana-logo.jpg",
     longDescription: "Pigeon/Hanzo is a Liquity V2 fork on the Katana blockchain.",
   },
@@ -261,8 +264,8 @@ export const forksData: Fork[] = [
     status: "unscheduled",
     stablecoin: "–",
     governanceToken: "N/A",
-    website: "#",
-    docs: "#",
+    website: null,
+    docs: null,
     twitter: "https://x.com/VermillionFi",
     logoUrl: "/vermillion-logo.jpg",
     longDescription: "Vermillion is a Liquity V2 fork on the Sei blockchain.",
@@ -276,7 +279,8 @@ export const forksData: Fork[] = [
     stablecoin: "gyUSD",
     governanceToken: "N/A",
     website: "https://gyoza.finance/",
-    docs: "#",
+    twitter: "https://x.com/gyozafinance",
+    docs: null,
     logoUrl: "/gyoza-logo.jpg",
     collaterals: ["ETH", "RON", "AXS", "LRON", "FBTC", "rETH"],
     longDescription:

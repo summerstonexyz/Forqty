@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       sizes: "180x180",
     },
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

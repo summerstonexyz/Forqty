@@ -206,27 +206,29 @@ export function ForkCard({ fork }: { fork: Fork }) {
         </CardContent>
         <div className="mt-auto">
           <Separator />
-          <CardFooter className="pt-3 md:pt-4 flex justify-between gap-2">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
-                    asChild
-                  >
-                    <Link href={fork.website} target="_blank" className="flex items-center justify-center">
-                      <ExternalLink className="mr-1 h-3 w-3 md:mr-1.5 md:h-3.5 md:w-3.5" />
-                      <span>Website</span>
-                    </Link>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-xs">Visit {fork.name} website</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+          <CardFooter className="pt-3 md:pt-4 flex justify-between gap-2 min-h-[44px] md:min-h-[48px]">
+            {fork.website && (
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
+                      asChild
+                    >
+                      <Link href={fork.website} target="_blank" className="flex items-center justify-center">
+                        <ExternalLink className="mr-1 h-3 w-3 md:mr-1.5 md:h-3.5 md:w-3.5" />
+                        <span>Website</span>
+                      </Link>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-xs">Visit {fork.name} website</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            )}
 
             {fork.twitter && (
               <TooltipProvider>
@@ -251,26 +253,28 @@ export function ForkCard({ fork }: { fork: Fork }) {
               </TooltipProvider>
             )}
 
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
-                    asChild
-                  >
-                    <Link href={fork.docs} target="_blank" className="flex items-center justify-center">
-                      <ExternalLink className="mr-1 h-3 w-3 md:mr-1.5 md:h-3.5 md:w-3.5" />
-                      <span>Docs</span>
-                    </Link>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-xs">View documentation</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            {fork.docs && (
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-7 text-xs px-2 md:h-8 hover:bg-background/80 transition-colors flex-1"
+                      asChild
+                    >
+                      <Link href={fork.docs} target="_blank" className="flex items-center justify-center">
+                        <ExternalLink className="mr-1 h-3 w-3 md:mr-1.5 md:h-3.5 md:w-3.5" />
+                        <span>Docs</span>
+                      </Link>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-xs">View documentation</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            )}
           </CardFooter>
         </div>
       </Card>
