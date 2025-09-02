@@ -1,14 +1,16 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+  // 👉 Static export (generates /out)
+  output: 'export',
 
-export default nextConfig
+  // Safer for static hosts; each route ends with a slash.
+  trailingSlash: true,
+
+  // Your existing settings
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+  images: { unoptimized: true }, // required for next/image in static export
+};
+
+export default nextConfig;
