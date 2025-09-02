@@ -191,7 +191,7 @@ export const forksData: Fork[] = [
     docs: null,
     twitter: "https://x.com/mustangfinance",
     logoUrl: "/mustang-logo.jpg",
-    collaterals: ["ETH", "rETH", "tBTC"],
+    collaterals: ["ETH", "rETH", "tBTC", "FBTC", "SAGA"],
     longDescription:
       "Mustang Finance is a Liquity V2 fork on the Saga blockchain, providing decentralized credit with unbridled speed. Users can mint MUST stablecoins against ETH, rETH, and tBTC collaterals.",
   },
