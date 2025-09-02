@@ -179,23 +179,24 @@ export const forksData: Fork[] = [
     longDescription:
       "Liquity V2 fork on Sonic blockchain enabling users to mint the ONE stablecoin against various collaterals.",
   },
-
-  // Unscheduled forks
   {
     id: "saga-fork",
     name: "Mustang Finance",
     description: "Liquity V2 fork on Saga",
     chain: "Saga",
-    status: "unscheduled",
-    stablecoin: "–",
+    status: "scheduled",
+    stablecoin: "MUST",
     governanceToken: "N/A",
     website: "https://www.must.finance/",
     docs: null,
     twitter: "https://x.com/mustangfinance",
     logoUrl: "/mustang-logo.jpg",
+    collaterals: ["ETH", "rETH", "tBTC"],
     longDescription:
-      "Mustang Finance is a Liquity V2 fork on the Saga blockchain, providing decentralized credit with unbridled speed. Users can mint stablecoins against BTC, ETH, and SAGA collaterals.",
+      "Mustang Finance is a Liquity V2 fork on the Saga blockchain, providing decentralized credit with unbridled speed. Users can mint MUST stablecoins against ETH, rETH, and tBTC collaterals.",
   },
+
+  // Unscheduled forks
   {
     id: "alpen",
     name: "Alpen",
