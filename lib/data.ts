@@ -97,7 +97,7 @@ export const forksData: Fork[] = [
   {
     id: "ebisu-money",
     name: "Ebisu Money",
-    description: "Liquity V2 fork on Ethereum Mainnet",
+    description: "Liquity V2 fork on Ethereum Mainnet (and Plasma soon)",
     chain: "Ethereum",
     status: "launched",
     stablecoin: "ebUSD",
@@ -195,20 +195,19 @@ export const forksData: Fork[] = [
     longDescription:
       "Mustang Finance is a Liquity V2 fork on the Saga blockchain, providing decentralized credit with unbridled speed. Users can mint MUST stablecoins against ETH, rETH, and tBTC collaterals.",
   },
-
-  // Unscheduled forks
   {
     id: "alpen",
-    name: "Alpen",
+    name: "Bitcoin Dollar",
     description: "Liquity V2 fork on Strata",
     chain: "Strata",
-    status: "unscheduled",
+    status: "scheduled",
     stablecoin: "BTD",
     governanceToken: "N/A",
     website: "https://www.alpenlabs.io/",
     docs: "https://docs.alpenlabs.io/",
     twitter: "https://x.com/AlpenLabs",
     logoUrl: "/alpen-logo.png",
+    collaterals: ["BTC"],
     longDescription:
       "BTD will deploy Liquity V2 with BTC as the sole collateral on Alpen's Bitcoin ZK rollup with immutable code from the moment of deployment.",
   },
@@ -217,7 +216,7 @@ export const forksData: Fork[] = [
     name: "Beraborrow",
     description: "Liquity V1 fork on Berachain",
     chain: "Berachain",
-    status: "unscheduled",
+    status: "scheduled",
     stablecoin: "NECT",
     governanceToken: "POLLEN",
     website: "https://beraborrow.com",
@@ -227,6 +226,8 @@ export const forksData: Fork[] = [
     longDescription:
       "Beraborrow unlocks instant liquidity against Berachain assets through the first PoL powered stablecoin, Nectar ($NECT). Built with simplicity and flexibility at its core, Beraborrow is designed to maximise opportunities for users without forcing them to sacrifice yield.",
   },
+
+  // Unscheduled forks
   {
     id: "spiceusd",
     name: "SpiceUSD",
@@ -286,5 +287,19 @@ export const forksData: Fork[] = [
     collaterals: ["ETH", "RON", "AXS", "LRON", "FBTC", "rETH"],
     longDescription:
       "Gyoza is a Liquity V2 fork on the Ronin blockchain, allowing users to mint gyUSD stablecoins against various collaterals including ETH, RON, AXS, and other Ronin ecosystem tokens.",
+  },
+  {
+    id: "linerum",
+    name: "Linerum",
+    description: "Liquity V2 fork on Linea",
+    chain: "Linea",
+    status: "unscheduled",
+    stablecoin: "linUSD",
+    governanceToken: "N/A",
+    website: null,
+    docs: null,
+    twitter: "https://x.com/Linereumfi",
+    logoUrl: "/linerum-logo.jpg",
+    longDescription: "Linerum is a Liquity V2 fork on the Linea blockchain.",
   },
 ]

@@ -19,9 +19,9 @@ export function ForkCard({ fork }: { fork: Fork }) {
   const [expandedOpen, setExpandedOpen] = useState(false)
 
   const statusIcon = {
-    launched: <Check className="h-3 w-3 md:h-4 md:w-4 text-green-500" />,
+    launched: <Check className="h-3 w-3 md:h-4 md:w-4 text-green-700" />,
     scheduled: <Calendar className="h-3 w-3 md:h-4 md:w-4 text-blue-500" />,
-    unscheduled: <Clock className="h-3 w-3 md:h-4 md:w-4 text-yellow-500" />,
+    unscheduled: <Clock className="h-3 w-3 md:h-4 md:w-4 text-yellow-600" />,
   }
 
   const statusText = {
@@ -31,9 +31,9 @@ export function ForkCard({ fork }: { fork: Fork }) {
   }
 
   const statusColor = {
-    launched: "bg-green-500/10 text-green-500 hover:bg-green-500/20",
+    launched: "bg-green-500/10 text-green-700 hover:bg-green-500/20",
     scheduled: "bg-blue-500/10 text-blue-500 hover:bg-blue-500/20",
-    unscheduled: "bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20",
+    unscheduled: "bg-yellow-500/10 text-yellow-600 hover:bg-yellow-500/20",
   }
 
   // Check if the launch date is a specific date (not just "Coming soon" or similar)
@@ -114,7 +114,7 @@ export function ForkCard({ fork }: { fork: Fork }) {
                   <TooltipTrigger asChild>
                     <Badge
                       variant="outline"
-                      className="bg-purple-500/10 text-purple-500 hover:bg-purple-500/20 text-[10px] md:text-xs h-5 md:h-6 cursor-pointer"
+                      className="bg-purple-500/10 text-purple-800 hover:bg-purple-500/20 text-[10px] md:text-xs h-5 md:h-6 cursor-pointer"
                       onClick={() => window.open(fork.rewards?.url, "_blank")}
                     >
                       <span>{fork.rewards.title}</span>
@@ -150,7 +150,7 @@ export function ForkCard({ fork }: { fork: Fork }) {
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               {/* Left column: Collaterals */}
               <div>
-                <p className="text-[10px] font-medium text-muted-foreground md:text-xs">Collaterals</p>
+                <p className="text-[10px] font-medium text-foreground/70 md:text-xs">Collaterals</p>
                 {hasCollaterals ? (
                   <TooltipProvider>
                     <Tooltip>

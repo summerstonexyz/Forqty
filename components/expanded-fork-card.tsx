@@ -19,9 +19,9 @@ interface ExpandedForkCardProps {
 
 export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardProps) {
   const statusColor = {
-    launched: "bg-green-500/10 text-green-500 hover:bg-green-500/20",
+    launched: "bg-green-500/10 text-green-700 hover:bg-green-500/20",
     scheduled: "bg-blue-500/10 text-blue-500 hover:bg-blue-500/20",
-    unscheduled: "bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20",
+    unscheduled: "bg-yellow-500/10 text-yellow-600 hover:bg-yellow-500/20",
   }
 
   return (
@@ -37,7 +37,7 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
                 {fork.rewards && (
                   <Badge
                     variant="outline"
-                    className="bg-purple-500/10 text-purple-500 hover:bg-purple-500/20 text-xs h-6 cursor-pointer"
+                    className="bg-purple-500/10 text-purple-800 hover:bg-purple-500/20 text-xs h-6 cursor-pointer"
                     onClick={() => window.open(fork.rewards?.url, "_blank")}
                   >
                     <span>{fork.rewards.title}</span>
@@ -79,7 +79,7 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
 
             {fork.collaterals && fork.collaterals.length > 0 && (
               <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Supported Collaterals</h3>
+                <h3 className="text-sm font-medium text-foreground/70 mb-2">Supported Collaterals</h3>
                 <div className="flex flex-wrap gap-2">
                   {fork.collaterals.map((collateral) => (
                     <Badge key={collateral} variant="secondary">
@@ -146,7 +146,7 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
             {fork.rewards && (
               <Button
                 variant="outline"
-                className="bg-purple-500/10 text-purple-500 hover:bg-purple-500/20 border-purple-500/20"
+                className="bg-purple-500/10 text-purple-800 hover:bg-purple-500/20 border-purple-500/20"
                 asChild
               >
                 <Link href={fork.rewards.url} target="_blank">

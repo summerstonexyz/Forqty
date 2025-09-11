@@ -57,7 +57,7 @@ export function ForksDashboard() {
           <p className="text-sm text-muted-foreground">Track all Liquity V2 forks across different blockchains</p>
         </div>
         <div className="flex items-center gap-2 mt-2 md:mt-0">
-          <Button variant="outline" size="sm" className="h-8 text-xs w-full md:w-auto" asChild>
+          <Button variant="outline" size="sm" className="h-8 text-xs w-full md:w-auto bg-transparent" asChild>
             <Link href="https://docs.liquity.org/v2-documentation/friendly-fork-program" target="_blank">
               <ArrowUpRight className="mr-1 h-3 w-3 md:mr-2 md:h-4 md:w-4" />
               Fork Program
@@ -101,6 +101,17 @@ export function ForksDashboard() {
               <span>Documentation</span>
             </Link>
           </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-7 text-xs px-3 md:h-8 hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-colors"
+            asChild
+          >
+            <Link href="https://www.liquity.org/forks" target="_blank" className="flex items-center">
+              <ExternalLink className="mr-1 h-3 w-3 md:mr-1.5 md:h-3.5 md:w-3.5" />
+              <span>Learn Fork Venues</span>
+            </Link>
+          </Button>
         </CardFooter>
       </Card>
 
@@ -119,7 +130,7 @@ export function ForksDashboard() {
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto h-9 text-sm md:h-10">
+            <Button variant="outline" className="ml-auto h-9 text-sm md:h-10 bg-transparent">
               <Filter className="mr-1 h-3.5 w-3.5 md:mr-2 md:h-4 md:w-4" />
               Filter
               <ChevronDown className="ml-1 h-3.5 w-3.5 md:ml-2 md:h-4 md:w-4" />
