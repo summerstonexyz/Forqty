@@ -226,6 +226,22 @@ export const forksData: Fork[] = [
     longDescription:
       "Beraborrow unlocks instant liquidity against Berachain assets through the first PoL powered stablecoin, Nectar ($NECT). Built with simplicity and flexibility at its core, Beraborrow is designed to maximise opportunities for users without forcing them to sacrifice yield.",
   },
+  {
+    id: "enosys-loans",
+    name: "Enosys Loans",
+    description: "Liquity V2 fork on Flare",
+    chain: "Flare",
+    status: "scheduled",
+    stablecoin: "CDP Dollar",
+    governanceToken: "N/A",
+    website: "https://enosys.global/products/loans",
+    docs: "https://help.enosys.global/enosys/enosys-ecosystem/enosys-loans",
+    twitter: "https://x.com/enosys_global",
+    logoUrl: "/enosys-logo.jpg",
+    collaterals: ["tFXRP", "WC2FLR", "tstFXRP", "stXRP", "FBTC"],
+    longDescription:
+      "Enosys Loans is a Liquity V2 fork on the Flare blockchain, allowing users to mint CDP Dollar stablecoins against various collaterals including tFXRP, WC2FLR, and other Flare ecosystem tokens.",
+  },
 
   // Unscheduled forks
   {
