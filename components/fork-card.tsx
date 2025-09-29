@@ -17,6 +17,26 @@ import { ExpandedForkCard } from "./expanded-fork-card"
 
 export function ForkCard({ fork }: { fork: Fork }) {
   const [expandedOpen, setExpandedOpen] = useState(false)
+  const [selectedChain, setSelectedChain] = useState(fork.multiChain ? fork.multiChain.defaultChain : fork.chain)
+
+  const getCurrentChainConfig = () => {
+    if (!fork.multiChain) return { chain: fork.chain, collaterals: fork.collaterals || [] }
+
+    const chainConfig = fork.multiChain.chains.find((c) => c.chain === selectedChain)
+    return chainConfig || fork.multiChain.chains[0]
+  }
+
+  const currentConfig = getCurrentChainConfig()
+
+  const getDisplayStatus = () => {
+    if (fork.multiChain) {
+      const chainConfig = fork.multiChain.chains.find((c) => c.chain === selectedChain)
+      return chainConfig?.status || fork.status
+    }
+    return fork.status
+  }
+
+  const displayStatus = getDisplayStatus()
 
   const statusIcon = {
     launched: <Check className="h-3 w-3 md:h-4 md:w-4 text-green-700" />,
@@ -55,8 +75,8 @@ export function ForkCard({ fork }: { fork: Fork }) {
     : null
 
   // Check if the fork has collaterals
-  const hasCollaterals = fork.collaterals && fork.collaterals.length > 0
-  const collateralCount = hasCollaterals ? fork.collaterals.length : 0
+  const hasCollaterals = currentConfig.collaterals && currentConfig.collaterals.length > 0
+  const collateralCount = hasCollaterals ? currentConfig.collaterals.length : 0
 
   return (
     <>
@@ -65,10 +85,10 @@ export function ForkCard({ fork }: { fork: Fork }) {
           <div className="flex items-center justify-between">
             <Badge
               variant="outline"
-              className={cn("font-normal text-[10px] md:text-xs h-5 md:h-6", statusColor[fork.status])}
+              className={cn("font-normal text-[10px] md:text-xs h-5 md:h-6", statusColor[displayStatus])}
             >
-              {statusIcon[fork.status]}
-              <span className="ml-1">{statusText[fork.status]}</span>
+              {statusIcon[displayStatus]}
+              <span className="ml-1">{statusText[displayStatus]}</span>
             </Badge>
             <div className="flex items-center gap-1">
               <TooltipProvider>
@@ -89,9 +109,29 @@ export function ForkCard({ fork }: { fork: Fork }) {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-              <Badge variant="outline" className="text-[10px] md:text-xs h-5 md:h-6">
-                {fork.chain}
-              </Badge>
+              {fork.multiChain ? (
+                <div className="flex bg-muted rounded-md p-0.5">
+                  {fork.multiChain.chains.map((chainConfig) => (
+                    <Button
+                      key={chainConfig.chain}
+                      variant="ghost"
+                      size="sm"
+                      className={`h-5 md:h-6 px-2 text-[10px] md:text-xs rounded-sm ${
+                        selectedChain === chainConfig.chain
+                          ? "bg-primary text-primary-foreground shadow-sm"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      onClick={() => setSelectedChain(chainConfig.chain)}
+                    >
+                      {chainConfig.chain}
+                    </Button>
+                  ))}
+                </div>
+              ) : (
+                <Badge variant="outline" className="text-[10px] md:text-xs h-5 md:h-6">
+                  {fork.chain}
+                </Badge>
+              )}
             </div>
           </div>
 
@@ -136,13 +176,13 @@ export function ForkCard({ fork }: { fork: Fork }) {
               {/* Left column: Stablecoin */}
               <div>
                 <p className="text-[10px] font-medium text-muted-foreground md:text-xs">Stablecoin</p>
-                <p className="text-xs font-medium md:text-sm">{fork.stablecoin}</p>
+                <p className="text-xs font-medium md:text-sm">{fork.stablecoin || "–"}</p>
               </div>
 
               {/* Right column: Governance Token */}
               <div>
                 <p className="text-[10px] font-medium text-muted-foreground md:text-xs">Governance Token</p>
-                <p className="text-xs font-medium md:text-sm">{fork.governanceToken || "None"}</p>
+                <p className="text-xs font-medium md:text-sm">{fork.governanceToken || "–"}</p>
               </div>
             </div>
 
@@ -279,7 +319,13 @@ export function ForkCard({ fork }: { fork: Fork }) {
         </div>
       </Card>
 
-      <ExpandedForkCard fork={fork} open={expandedOpen} onOpenChange={setExpandedOpen} />
+      <ExpandedForkCard
+        fork={fork}
+        open={expandedOpen}
+        onOpenChange={setExpandedOpen}
+        selectedChain={selectedChain}
+        onChainChange={setSelectedChain}
+      />
     </>
   )
 }

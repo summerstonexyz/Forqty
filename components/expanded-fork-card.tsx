@@ -15,14 +15,37 @@ interface ExpandedForkCardProps {
   fork: Fork
   open: boolean
   onOpenChange: (open: boolean) => void
+  selectedChain?: string
+  onChainChange?: (string) => void
 }
 
-export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardProps) {
+export function ExpandedForkCard({ fork, open, onOpenChange, selectedChain, onChainChange }: ExpandedForkCardProps) {
   const statusColor = {
     launched: "bg-green-500/10 text-green-700 hover:bg-green-500/20",
     scheduled: "bg-blue-500/10 text-blue-500 hover:bg-blue-500/20",
     unscheduled: "bg-yellow-500/10 text-yellow-600 hover:bg-yellow-500/20",
   }
+
+  const getCurrentChainConfig = () => {
+    if (!fork.multiChain) return { chain: fork.chain, collaterals: fork.collaterals || [] }
+
+    const currentChain = selectedChain || fork.multiChain.defaultChain
+    const chainConfig = fork.multiChain.chains.find((c) => c.chain === currentChain)
+    return chainConfig || fork.multiChain.chains[0]
+  }
+
+  const currentConfig = getCurrentChainConfig()
+
+  const getDisplayStatus = () => {
+    if (fork.multiChain) {
+      const currentChain = selectedChain || fork.multiChain.defaultChain
+      const chainConfig = fork.multiChain.chains.find((c) => c.chain === currentChain)
+      return chainConfig?.status || fork.status
+    }
+    return fork.status
+  }
+
+  const displayStatus = getDisplayStatus()
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -30,8 +53,8 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30 p-6">
           <DialogHeader className="pb-2 space-y-2">
             <div className="flex items-center justify-between">
-              <Badge variant="outline" className={`font-normal text-xs h-6 ${statusColor[fork.status]}`}>
-                <span className="ml-1">{fork.status.charAt(0).toUpperCase() + fork.status.slice(1)}</span>
+              <Badge variant="outline" className={`font-normal text-xs h-6 ${statusColor[displayStatus]}`}>
+                <span className="ml-1">{displayStatus.charAt(0).toUpperCase() + displayStatus.slice(1)}</span>
               </Badge>
               <div className="flex gap-2">
                 {fork.rewards && (
@@ -43,9 +66,29 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
                     <span>{fork.rewards.title}</span>
                   </Badge>
                 )}
-                <Badge variant="outline" className="text-xs h-6">
-                  {fork.chain}
-                </Badge>
+                {fork.multiChain ? (
+                  <div className="flex bg-muted rounded-md p-0.5">
+                    {fork.multiChain.chains.map((chainConfig) => (
+                      <Button
+                        key={chainConfig.chain}
+                        variant="ghost"
+                        size="sm"
+                        className={`h-6 px-3 text-xs rounded-sm ${
+                          (selectedChain || fork.multiChain.defaultChain) === chainConfig.chain
+                            ? "bg-primary text-primary-foreground shadow-sm"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                        onClick={() => onChainChange && onChainChange(chainConfig.chain)}
+                      >
+                        {chainConfig.chain}
+                      </Button>
+                    ))}
+                  </div>
+                ) : (
+                  <Badge variant="outline" className="text-xs h-6">
+                    {fork.chain}
+                  </Badge>
+                )}
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -69,19 +112,21 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <h3 className="text-sm font-medium text-muted-foreground mb-1">Stablecoin</h3>
-                <p className="text-base font-medium">{fork.stablecoin}</p>
+                <p className="text-base font-medium">{fork.stablecoin || "–"}</p>
               </div>
               <div>
                 <h3 className="text-sm font-medium text-muted-foreground mb-1">Governance Token</h3>
-                <p className="text-base font-medium">{fork.governanceToken || "None"}</p>
+                <p className="text-base font-medium">{fork.governanceToken || "–"}</p>
               </div>
             </div>
 
-            {fork.collaterals && fork.collaterals.length > 0 && (
+            {currentConfig.collaterals && currentConfig.collaterals.length > 0 && (
               <div>
-                <h3 className="text-sm font-medium text-foreground/70 mb-2">Supported Collaterals</h3>
+                <h3 className="text-sm font-medium text-foreground/70 mb-2">
+                  Supported Collaterals {fork.multiChain && `(${currentConfig.chain})`}
+                </h3>
                 <div className="flex flex-wrap gap-2">
-                  {fork.collaterals.map((collateral) => (
+                  {currentConfig.collaterals.map((collateral) => (
                     <Badge key={collateral} variant="secondary">
                       {collateral}
                     </Badge>
@@ -115,7 +160,7 @@ export function ExpandedForkCard({ fork, open, onOpenChange }: ExpandedForkCardP
                   <p className="text-sm">{fork.redemptionFee}</p>
                 </div>
               )}
-              {fork.status === "scheduled" && fork.launchDate && (
+              {displayStatus === "scheduled" && fork.launchDate && (
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-1">Launch Date</h3>
                   <p className="text-sm">{fork.launchDate}</p>

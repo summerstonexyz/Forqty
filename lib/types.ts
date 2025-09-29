@@ -1,5 +1,10 @@
 export type ForkStatus = "launched" | "scheduled" | "unscheduled"
 
+export interface ChainConfig {
+  chain: string
+  collaterals: string[]
+}
+
 export interface Fork {
   id: string
   name: string
@@ -26,4 +31,8 @@ export interface Fork {
   minimumDebt?: string
   borrowingFee?: string
   redemptionFee?: string
+  multiChain?: {
+    chains: ChainConfig[]
+    defaultChain: string
+  }
 }
