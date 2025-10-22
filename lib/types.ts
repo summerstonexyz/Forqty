@@ -3,6 +3,7 @@ export type ForkStatus = "launched" | "scheduled" | "unscheduled"
 export interface ChainConfig {
   chain: string
   collaterals: string[]
+  status?: ForkStatus
 }
 
 export interface Fork {
@@ -13,8 +14,8 @@ export interface Fork {
   status: ForkStatus
   stablecoin: string
   governanceToken: string | null
-  website: string
-  docs: string
+  website: string | null
+  docs: string | null
   twitter?: string
   logoUrl?: string
   launchDate?: string

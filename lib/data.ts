@@ -120,10 +120,11 @@ export const forksData: Fork[] = [
         {
           chain: "Ethereum",
           collaterals: ["WBTC", "LBTC", "sUSDe", "weETH"],
+          status: "launched",
         },
         {
           chain: "Plasma",
-          collaterals: ["XPL", "XAUT", "sUSDe", "weETH", "GHO", "SyrupUSDT", "WETH"],
+          collaterals: ["WXPL", "WETH", "XAUT0", "sUSDe", "weETH", "syrupUSDT", "sUSDai"],
           status: "scheduled",
         },
       ],
