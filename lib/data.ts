@@ -101,7 +101,7 @@ export const forksData: Fork[] = [
   {
     id: "ebisu-money",
     name: "Ebisu Money",
-    description: "Liquity V2 fork on Ethereum Mainnet and Plasma soon",
+    description: "Liquity V2 fork on Ethereum Mainnet and Plasma",
     chain: "Ethereum",
     status: "launched",
     stablecoin: "ebUSD",
@@ -125,7 +125,7 @@ export const forksData: Fork[] = [
         {
           chain: "Plasma",
           collaterals: ["WXPL", "WETH", "XAUT0", "sUSDe", "weETH", "syrupUSDT", "sUSDai"],
-          status: "scheduled",
+          status: "launched",
         },
       ],
       defaultChain: "Ethereum",
