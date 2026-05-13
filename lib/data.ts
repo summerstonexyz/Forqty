@@ -94,7 +94,7 @@ export const forksData: Fork[] = [
       title: "Rewards Program",
       url: "https://x.com/LiquityProtocol/status/1954927945992286598",
     },
-    collaterals: ["BTC.b", "AVAX", "LSTs"],
+    collaterals: ["BTC.b", "AVAX"],
     longDescription:
       "Aesyx is a decentralized borrowing protocol on Avalanche that allows users to mint USXY stablecoins against various collaterals including BTC.b, AVAX, and Liquid Staking Tokens.",
   },
@@ -110,7 +110,7 @@ export const forksData: Fork[] = [
     docs: "https://ebisu.gitbook.io/ebisu-money/",
     twitter: "https://x.com/ebisu_finance",
     logoUrl: "/ebisu-logo.png",
-    collaterals: ["WBTC", "LBTC", "sUSDe", "weETH"],
+    collaterals: ["WBTC", "LBTC", "sUSDe", "weETH", "stcUSD"],
     rewards: {
       title: "Rewards Program",
       url: "https://x.com/ebisu_finance/status/1962899405759037586",
@@ -119,7 +119,7 @@ export const forksData: Fork[] = [
       chains: [
         {
           chain: "Ethereum",
-          collaterals: ["WBTC", "LBTC", "sUSDe", "weETH"],
+          collaterals: ["WBTC", "LBTC", "sUSDe", "weETH", "stcUSD"],
           status: "launched",
         },
         {
@@ -188,21 +188,6 @@ export const forksData: Fork[] = [
       "Asymmetry Finance is a decentralized borrowing protocol that allows users to mint USDaf stablecoins against various Bitcoin-backed and yield-bearing stablecoin collaterals on Ethereum.",
   },
   {
-    id: "ironclad-finance",
-    name: "Ironclad Finance",
-    description: "Liquity V2 fork on Base",
-    chain: "Base",
-    status: "scheduled",
-    stablecoin: "iUSD",
-    governanceToken: "ICL",
-    website: "https://ironclad.finance",
-    docs: "https://docs.ironclad.finance",
-    twitter: "https://x.com/IroncladFinance",
-    logoUrl: "/ironclad-logo.png",
-    launchDate: "Coming soon",
-    hidden: true,
-  },
-  {
     id: "saga-fork",
     name: "Mustang Finance",
     description: "Liquity V2 fork on Saga",
@@ -217,6 +202,22 @@ export const forksData: Fork[] = [
     collaterals: ["WETH", "YieldFi yETH", "tBTC", "SAGA", "Stride Staked Atom", "King Protocol", "YieldFi yUSD"],
     longDescription:
       "Mustang Finance is a Liquity V2 fork on the Saga blockchain, providing decentralized credit with unbridled speed. Users can mint MUST stablecoins against ETH, rETH, and tBTC collaterals.",
+  },
+  {
+    id: "Uncap",
+    name: "Uncap Finance",
+    description: "Liquity V2 fork on Starknet",
+    chain: "Starknet",
+    status: "launched",
+    stablecoin: "USDU",
+    governanceToken: "–",
+    website: "https://uncap.finance/",
+    docs: "https://uncap.finance/resources/docs/",
+    twitter: "https://x.com/uncapfinance",
+    logoUrl: "/uncap-logo.jpg",
+    collaterals: ["WBTC", "tBTC", "SolvBTC"],
+    longDescription:
+      "Uncap is a Liquity V2 fork on Starknet dedicated to mint stablecoins against BTC",
   },
   {
     id: "alpen",
@@ -254,14 +255,14 @@ export const forksData: Fork[] = [
     name: "Enosys Loans",
     description: "Liquity V2 fork on Flare",
     chain: "Flare",
-    status: "scheduled",
+    status: "launched",
     stablecoin: "CDP Dollar",
-    governanceToken: "–",
+    governanceToken: "APS",
     website: "https://enosys.global/products/loans",
     docs: "https://help.enosys.global/enosys/enosys-ecosystem/enosys-loans",
     twitter: "https://x.com/enosys_global",
     logoUrl: "/enosys-logo.jpg",
-    collaterals: ["tFXRP", "WC2FLR", "tstFXRP", "stXRP", "FBTC"],
+    collaterals: ["FXRP", "WFLR"],
     longDescription:
       "Enosys Loans is a Liquity V2 fork on the Flare blockchain, allowing users to mint CDP Dollar stablecoins against various collaterals including tFXRP, WC2FLR, and other Flare ecosystem tokens.",
   },
